@@ -1,0 +1,27 @@
+#  服务启动端口
+server:
+  port: 8080
+  servlet:
+    #Context path of the application. 应用的上下文路径，也可以称为项目路径，是构成url地址的一部分。
+    context-path: /api
+
+
+
+# 一般项目中会有多个配置文件,用于选择加载哪个配置文件
+spring:
+  profiles:
+    active: dev
+
+
+# mybatis
+mybatis:
+  mapperLocations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+  typeAliasesPackage: com.lzw.springbootdemo.entity
+
+# 日志输出配置
+# resources   classpath
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.lzw.springbootdemo.mapper: debug
